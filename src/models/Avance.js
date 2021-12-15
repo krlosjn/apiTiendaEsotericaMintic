@@ -1,6 +1,8 @@
 const { Schema, model } = require("mongoose");
+const Proyecto= require('./Proyecto');
+
 const AvanceSchema = Schema({
-    "idProyecto": { type: String, required: true },
+    "idProyecto": { type: Schema.Types.ObjectId,ref:'Proyecto', required: true },
     "fechaAvance": { type: String, required: true },
     "descripcionAvance": { type: String, required: true },
     "observacionAvance": { type: String, require: false },

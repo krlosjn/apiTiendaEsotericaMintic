@@ -73,15 +73,15 @@ const typeDefs = `
         identificacion: String,
         nombreCompleto: String,
         password: String,
+        rol:String
     }
     type Avance {
         id: ID,
-        idProyecto: String,
+        idProyecto: Proyecto,
         fechaAvance: String, 
         descripcionAvance: String, 
         observacionAvance: String, 
     }
-
     type Proyecto {
         id: ID,
         nombreProyecto : String,
@@ -160,8 +160,8 @@ const typeDefs = `
 
     type Inscripcion {
         id: ID,
-        idProyecto: String,
-        idUsuario: String,
+        idProyecto: Proyecto,
+        idUsuario: Usuario,
         estadoInscripcion: String,
         fechaIngreso: String,
         fechaEgreso: String,

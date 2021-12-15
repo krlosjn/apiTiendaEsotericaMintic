@@ -1,0 +1,89 @@
+INSERTAR UN ESTUDIANTE
+mutation AgregarUsuario($usuario:UsuarioInput){
+  AgregarUsuario(usuario:$usuario){
+    email,
+    identificacion,
+    nombreCompleto,
+    estado,
+    password,
+    rol
+    
+  }
+}
+
+body 
+{
+    "usuario": {
+      "email": "carf@gmail.com",
+      "identificacion": "1152205389",
+      "nombreCompleto": "Alfonso Cárdenas",
+      "estado":"Habilitado",
+      "password": "cajckjcl",
+      "rol":"lider"
+      
+	}
+}
+
+
+CONSULTAR LISTA DE USUARIOS
+
+
+{
+  Usuarios {
+  	id,
+    email,
+    identificacion,
+    nombreCompleto,
+    password,
+    estado,
+    rol
+    
+    
+  }
+}
+
+
+CONSULTAR UN ESTUDIANTE
+
+
+{
+  unUsuario(id:"61b94ea06e45b1e66c3aa075") {
+    id,
+  	email,
+  	identificacion,
+    nombreCompleto,
+    password,
+    estado,
+    rol
+	}
+}
+
+Actualizar usuario
+
+mutation ActualizarDatosUsuario($id:ID!,$input:UsuarioInputDatos){
+  
+  ActualizarDatosUsuario(id:$id,input:$input){
+    email,
+    identificacion,
+    nombreCompleto,
+    password,
+    rol 
+  }
+  
+}
+
+body 
+
+{
+  "id": "61b94ea06e45b1e66c3aa075",
+  "input" :{
+  	"email":"carfjun@gmail.com",
+    "identificacion": "1083000937",
+    "nombreCompleto": "Alfonso Cárdenas Ramirez"
+	}
+
+}
+
+Agregar un proyecto
+
+

@@ -8,20 +8,20 @@ import bcrypt from "bcrypt";
 export const resolvers = {
     Query: {
         Usuarios() {
-            return Usuario.find().populate('lider','nombreCompleto');
+            return Usuario.find().populate();
         },
         unUsuario(parents, args) {
             return Usuario.findById(args.id)
         },
         Proyectos() {
-            return Proyecto.find().populate('lider','nombreCompleto');
+            return Proyecto.find().populate();
         },
         unProyecto(parents, args) {
             return Proyecto.findById(args.id)
         },
         async avanceProyecto(parents, args) {
          
-            return await Proyecto.find().populate('avance',"descripcionAvance");
+            return await Proyecto.find().populate();
         },
        
         Inscripciones() {

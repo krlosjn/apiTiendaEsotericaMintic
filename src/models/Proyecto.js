@@ -4,7 +4,7 @@ const Usuario = require("./Usuario");
 const ProyectoSchema = Schema({
     nombreProyecto : { type: String, required: true },
     objetivosGenerales : [String],
-    objetivosEspecificos : [String],
+    objetivosEspecificos :{type:String, required:false},
     presupuesto: { type: Number, required: false},
     fechaInicio : { type: Date, require: true},    
     fechaTerminacion : { type: Date, require: true },
@@ -13,11 +13,7 @@ const ProyectoSchema = Schema({
         ref:'Usuario',
         required:true
     },
-    //"lider" : { type: String, require: true },
-    //"idLider" : { type: String, require: true },
-    //"documentoLider" : { type: String, require: true },
-    //"nombreLider" : { type: String, require: true },
-    estadoProyecto: { type: String, require: true, default: "INACTIVO" },
-    faseProyecto: { type: String, require: true, default: null },
+    estadoProyecto: { type: String, require: true},
+    faseProyecto: { type: String, require: true},
 })
 module.exports = model("Proyecto", ProyectoSchema);
