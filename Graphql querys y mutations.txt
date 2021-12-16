@@ -87,3 +87,38 @@ body
 Agregar un proyecto
 
 
+
+mutation AgregarProyecto($proyecto:ProyectoInput){
+  AgregarProyecto(proyecto:$proyecto){
+    id,
+    nombreProyecto,
+    objetivosGenerales,
+    objetivosEspecificos,
+    presupuesto,
+    fechaInicio,
+    fechaTerminacion,
+    lider{id},
+    estadoProyecto,
+    faseProyecto
+  }
+}
+
+body 
+
+{
+  "proyecto": {
+    "id": 1,
+    "nombreProyecto": "Desarrollo de apps juegos",
+    "objetivosGenerales": "Crear software de alta calidad",
+    "objetivosEspecificos": [
+      "crear software",
+      "desarrollador requerimientos"
+    ],
+    "presupuesto": 1000000000,
+    "fechaInicio": "2021-12-15",
+    "fechaTerminacion": "2021-12-31",
+    "lider": "61b94ea06e45b1e66c3aa075",
+    "estadoProyecto": "Iniciado",
+    "faseProyecto": "Inicial"
+  }
+}

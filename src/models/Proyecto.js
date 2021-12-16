@@ -4,7 +4,7 @@ const Usuario = require("./Usuario");
 const ProyectoSchema = Schema({
     nombreProyecto : { type: String, required: true },
     objetivosGenerales : [String],
-    objetivosEspecificos :{type:String, required:false},
+    objetivosEspecificos :{type:Array, required:false},
     presupuesto: { type: Number, required: false},
     fechaInicio : { type: Date, require: true},    
     fechaTerminacion : { type: Date, require: true },
